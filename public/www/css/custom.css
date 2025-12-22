@@ -1,0 +1,244 @@
+.reset-styles {
+    all: unset;
+}
+
+.posabs{
+    position:absolute!important;
+}
+
+.displaynone{
+    display:none;
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+.resizable-div {
+    /*width: 200px;*/
+    /* Initial width */
+    /*height: 150px;*/
+    /* Initial height */
+    border: 1px solid #ccc;
+    /* Optional: Add a border for visibility */
+    overflow: auto;
+    /* Required for the resize property to work */
+    resize: both;
+    /* Allows both horizontal and vertical resizing */
+    /* Other options for resize: */
+    /* resize: horizontal; */
+    /* Allows only horizontal resizing */
+    /* resize: vertical; */
+    /* Allows only vertical resizing */
+    /* resize: none; */
+    /* Disables resizing (default for most elements) */
+}
+
+.fullimage img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#fileSelector{
+
+    width: 90px;
+    height: 12px;
+    font-size: 6;
+}
+
+.bottonbutton,
+.bottombutton button,
+.bottombutton div{
+    padding: 0;
+    margin: 0;
+    font-size: 8px;
+    font-style: none;
+    font-weight: none;
+    background-color: #555;
+}
+
+.bottombutton div:hover,
+.bottombutton button:hover {
+    background-color: #888;
+}
+
+#editorcursor{
+    background-color: #555;
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    font-size: 12;
+}
+
+.editorbutton :hover{
+        background-color: #999;
+        height:24px;
+        width:24px;
+}
+
+#editorcursor img{
+    vertical-align: top;
+}
+
+.editor{
+    width: 500px;
+    height: 300px;
+    position: absolute;
+}
+
+.ace_editor :hover{
+    opacity:0.9;
+}
+
+.editorbutton {
+    background-color: #555;
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    font-size: 12;
+    top:16px;
+}
+
+#editorsave button,
+#editorclose button,
+.editorbutton button,
+.editorbutton button i {
+    background-color: transparent;
+    position:absolute;
+    border:0;
+    padding:none;
+    place-content: center;
+    padding-inline: 0;
+    padding-block: 0;
+    margin:none;
+    width: 12px;
+    height: 12px;
+    font-size: 6px;
+    top:0px;
+    left:0px;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    padding:0;
+    margin:0;
+    font-size: 6px;
+}
+
+.ediv{
+    width:0px;
+    height:0px;
+}
+
+.resizable-div{
+    border:1px solid #6f6
+}
+
+#dropzone {
+    border: 2px dashed #ccc;
+    width: 300px;
+    height: 80px;
+    background-color: white;
+    opacity: 0.5;
+}
+
+#dropzone:hover {
+    background-color: lightblue;;
+}
+
+.divgroup{
+    width:940px;
+    background-color: transparent;
+    position:absolute;
+}
+
+#dropgroup{
+    top:400px;
+    width:40px;
+    background-color: transparent;
+}
+
+#terminalgroup{
+    width:100%;
+    z-index:1;
+    background-color: #000;
+    opacity:0.8;
+}
+
+.scrollable-div {
+    /* Or max-height */
+    overflow-y: auto;
+    /* For vertical scrolling */
+    /* overflow-x: auto; for horizontal scrolling */
+    /* overflow: auto; for both vertical and horizontal if needed */
+    /* Optional: for visual clarity */
+}
+
+div.filegroup{
+    position: absolute;
+    top:200px;
+    background-color: #aaa;
+    opacity:0.7;
+    overflow:auto;
+    max-height:400px;
+    font-size:12px;
+}
+
+div.filegroup:hover {
+    opacity:0.9;
+}
+
+.keyboard-wrapper{
+    position:absolute;
+    z-index:1000;
+}
+
+.simple-keyboard.myTheme1 {
+    background-color: rgba(50, 50, 50, 0.8);
+    border-radius: 1;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.simple-keyboard.myTheme1 .hg-button {
+    /*height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    */
+    background: rgba(50, 50, 50, 0.5);
+    color: white;
+}
+
+.simple-keyboard.myTheme1 .hg-button:active {
+    background: #1c4995;
+    color: white;
+}
+
+#root .simple-keyboard.myTheme1+.simple-keyboard-preview {
+    background: #1c4995;
+}
+.themeform {
+    position:absolute;
+    top:0px;
+    left:0px;
+}
+
+.nooverflow{
+    overflow:none;
+}
+
+.alert{
+    display:none;
+    width:400px;
+    right:20px;
+    bottom:20px;
+    font-size:10px;
+    /*word-break: break-all;
+    overflow-wrap: break-word;*/
+}
