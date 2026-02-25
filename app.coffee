@@ -30,10 +30,10 @@ wss = new WebSocket.Server
   server:sslserver
 
 wss.on 'connection',(ws)->
-  ptyProcess = pty.spawn 'bash',[],
+  ptyProcess = pty.spawn 'cmd.exe',[],
     name: 'xterm-color',
-    cols: 80,
-    rows: 24,
+    #cols: 80,
+    #rows: 24,
     cwd: process.env.HOME,
     env: process.env
 
@@ -43,13 +43,21 @@ wss.on 'connection',(ws)->
     ws.send data
 
   ws.on 'message',(message)->
+    console.log message.toString()
+    try
+      data=JSON.parse(message.toString())
+      if data.type=='resize'
+        ptyProcess.resize data.cols,data.rows
+        return
+    catch e
+      #console.log e
     ptyProcess.write message
 
   ws.on 'close',()->
     ptyProcess.kill()
     console.log "Client disconnected. Killed PID: "+ptyProcess.pid
 
-console.log 'wss listening on port 443'
+console.log 'wss listening on port 6443'
 
-sslserver.listen 443,()->
-  console.log 'ssl server listening on port 443'
+sslserver.listen 6443,()->
+  console.log 'ssl server listening on port 6443'

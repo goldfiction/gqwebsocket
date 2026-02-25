@@ -1,21 +1,21 @@
 {
   "name": "gqwebsocket",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A tool that hosts a websocket for ssh client similar to shellinabox, but lighter",
   "repository": "git@github.com:goldfiction/gqwebsocket.git",
   "private": false,
   "main": "app.coffee",
   "node_version": "18.20.2",
   "dependencies": {
-    "ws":"8.18.3",
     "body-parser": "*",
     "express": "4.0.0",
     "express-basic-auth": "1.2.1",
-    "node-pty":"1.0.0"
+    "node-pty": "1.2.0-beta.10",
+    "ws": "8.18.3"
   },
   "devDependencies": {
-    "gqtest": ">=0.0.17",
     "coffeescript": "2.7.0",
+    "gqtest": ">=0.0.17",
     "nodemon": "3.1.10"
   },
   "scripts": {
