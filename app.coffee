@@ -43,12 +43,14 @@ wss.on 'connection',(ws)->
     ws.send data
 
   ws.on 'message',(message)->
-    console.log message.toString()
+    #console.log message.toString()
     try
-      data=JSON.parse(message.toString())
-      if data.type=='resize'
-        ptyProcess.resize data.cols,data.rows
-        return
+      message=message.toString()
+      if message.trim().startsWith("{")
+        data=JSON.parse message
+        if data.type=='resize'
+          ptyProcess.resize data.cols,data.rows
+          return
     catch e
       #console.log e
     ptyProcess.write message
