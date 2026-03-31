@@ -4,7 +4,19 @@ var term;
 var fitAddon;
 
 function attachXterm(){
-    term = new Terminal();
+    term = new Terminal({
+      fontFamily: '"Source Code Pro", "Courier New", monospace',
+      fontSize: 14,
+      encoding: 'utf-8'
+    });
+    //Microsoft YaHei
+
+    //term = new Terminal({
+    //  fontFamily: '"Microsoft YaHei", "Courier New", monospace',
+    //  fontSize: 14
+    //});
+
+    //term = new Terminal();
     fitAddon = new FitAddon.FitAddon();
 
     var webSocket = new WebSocket("wss://"+window.location.host); // Replace with your WebSocket endpoint
