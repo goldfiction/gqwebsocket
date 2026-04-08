@@ -1,6 +1,6 @@
 {
   "name": "gqwebsocket",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A tool that hosts a ssl websocket server for ssh",
   "repository": "git@github.com:goldfiction/gqwebsocket.git",
   "private": false,
@@ -21,7 +21,8 @@
   },
   "scripts": {
     "start": "coffee app.coffee",
-    "inst": "npm install --no-bin-links --no-optional --omit=optional --ignore-scripts"
+    "inst": "npm install --no-bin-links --no-optional --omit=optional --ignore-scripts",
+    "commit":"git push origin master && git push bitbucket master && git push nodegit master"
   },
   "author": "glidev5@gmail.com",
   "license": "Apache-2"

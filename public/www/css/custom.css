@@ -164,16 +164,20 @@ textarea {
 }
 
 #terminalgroup{
-    width:100%;
-    height:100%;
+    width:940px;
+    height:600px;
     z-index:1;
     background-color: #000;
-    opacity:0.8;
+    opacity:0.9;
 }
 
 #xterm-terminal{
     width:100%;
     height:100%;
+}
+
+.xterm{
+    cursor: url("/images/cursor32.png"), text !important;
 }
 
 .scrollable-div {
@@ -248,3 +252,4 @@ div.filegroup:hover {
     /*word-break: break-all;
     overflow-wrap: break-word;*/
 }
+
