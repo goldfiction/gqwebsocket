@@ -7,9 +7,19 @@ function attachXterm(){
     term = new Terminal({
       fontFamily: '"Source Code Pro", "Courier New", monospace',
       fontSize: 14,
-      encoding: 'utf-8'
+      encoding: 'utf-8',
+      theme: {
+        background: '#000',
+        foreground: '#fc6f03', // Default font color
+        cursor: '#ffffff',
+        black: '#000000',
+        red: '#ff0000'
+      }
     });
     //Microsoft YaHei
+    // Cascadia Mono
+    // JetBrains MONO
+    // Source Code Pro
 
     //term = new Terminal({
     //  fontFamily: '"Microsoft YaHei", "Courier New", monospace',

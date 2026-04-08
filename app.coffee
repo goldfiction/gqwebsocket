@@ -41,12 +41,13 @@ wss = new WebSocket.Server
 
 wss.on 'connection',(ws)->
   ptyProcess = pty.spawn shell,[],
-    name: 'xterm-color'
+    name: 'xterm'
     cwd: process.env.HOME
-    env:{ ...process.env, TERM: 'xterm-256color', LANG:'en_US.UTF-8', LC_ALL:'en_US.UTF-8'}
-    encoding: null
-    #cols: 80
-    #rows: 24
+    env:{ ...process.env, TERM: 'xterm', LANG:'en_US.UTF-8', LC_ALL:'en_US.UTF-8'}
+    #env:{ ...process.env, TERM: 'xterm-256color', LANG:'en_US.UTF-8', LC_ALL:'en_US.UTF-8'}
+    # encoding: null
+    # cols: 80
+    # rows: 24
 
   console.log "Client connected. PID: "+ptyProcess.pid
 
