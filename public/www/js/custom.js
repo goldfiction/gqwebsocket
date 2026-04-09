@@ -3,7 +3,7 @@
 var term;
 var fitAddon;
 
-function attachXterm(){
+function attachXterm(ssl){
     term = new Terminal({
       fontFamily: '"Source Code Pro", "Courier New", monospace',
       fontSize: 14,
@@ -29,7 +29,19 @@ function attachXterm(){
     //term = new Terminal();
     fitAddon = new FitAddon.FitAddon();
 
-    var webSocket = new WebSocket("wss://"+window.location.host); // Replace with your WebSocket endpoint
+    currentURL = window.location.href;
+    if (currentURL.indexOf("https") != -1) {
+        ssl = true;
+    } else {
+        ssl = false;
+    }
+    
+    var webSocket;
+    if(ssl)
+        webSocket = new WebSocket("wss://" + window.location.host);
+    else
+        webSocket = new WebSocket("ws://" + window.location.host);
+    
     webSocket.binaryType = 'arraybuffer';
     
     // Handle any other events (e.g., terminal resizing, socket closing)
