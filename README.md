@@ -10,6 +10,7 @@ A tool that hosts a ssl websocket server for ssh
 
 npm install
 npm start
-then access https://ip:6443/
-with admin//admin as basic auth
+
+then access https://yourdomain:6443/
+with basic auth
 ```
