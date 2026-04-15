@@ -1,6 +1,6 @@
 {
   "name": "gqwebsocket",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "A tool that hosts a ssl websocket server for ssh",
   "repository": "git@github.com:goldfiction/gqwebsocket.git",
   "private": false,

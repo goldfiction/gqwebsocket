@@ -10,7 +10,7 @@ function attachXterm(ssl){
       encoding: 'utf-8',
       theme: {
         background: '#000',
-        foreground: '#fc6f03', // Default font color
+        foreground: '#ff7000', // Default font color
         cursor: '#ffffff',
         black: '#000000',
         red: '#ff0000'
@@ -58,8 +58,31 @@ function attachXterm(ssl){
     term.loadAddon(fitAddon);
     term.open(document.getElementById('xterm-terminal'));
     //term.write('Hello from \x1B[1;3;31mxterm.js\x1B[0m $ ')
+
+    inputField = document.getElementById('terminalgroup');
+    inputField.addEventListener('keydown', (e) => {
+    //term.attachCustomKeyEventHandler((e) => {
+
+        // Capture Ctrl+plus (increases size)
+        if (e.ctrlKey && (e.key === '+' || e.key === '=')) {
+            e.preventDefault()
+            const newSize = Math.min(Math.max(term.options.fontSize + 1, 1), 100);
+            term.options.fontSize=newSize
+            return false; // Prevent default behavior
+        }
+        // Capture Ctrl+minus (decreases size)
+        if (e.ctrlKey && e.key === '-') {
+            e.preventDefault()
+            const newSize = Math.min(Math.max(term.options.fontSize - 1, 1), 100);
+            term.options.fontSize=newSize
+            return false;
+        }
+        return true;
+    });
     term.focus();
     fitAddon.fit();
+
+
 
     this.send = function (message, callback) {
         this.waitForConnection(function () {
