@@ -9,7 +9,7 @@ function attachXterm(ssl){
       fontSize: 14,
       encoding: 'utf-8',
       theme: {
-        background: '#000',
+        background: '#222',
         foreground: '#ff7000', // Default font color
         cursor: '#ffffff',
         black: '#000000',
